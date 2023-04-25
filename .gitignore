@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Ostral.API/appsettings.json
+/Ostral.API/Ostral.API.xml
+/Ostral.Infrastructure/Data/courses.json
+/Ostral.Infrastructure/Data/contents.json
+/Ostral.Infrastructure/Data/students.json
+/Ostral.Infrastructure/Data/tutor.json
