@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ostral.API", "Ostral.API\Ostral.API.csproj", "{A31A96CE-9D9D-4EE7-A5E3-954403056CB6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ostral.Domain", "Ostral.Domain\Ostral.Domain.csproj", "{84F4131E-55D6-4EB4-87F7-AA9DD5921904}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ostral.Infrastructure", "Ostral.Infrastructure\Ostral.Infrastructure.csproj", "{448D1733-7848-4EAD-ACCE-44A38B537BE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ostral.Core", "Ostral.Core\Ostral.Core.csproj", "{64FAD4E7-0B7E-464A-94A4-B5C3B88FF088}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1B0DDC11-28BB-4904-AF40-4ECAF04B88CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ostral.ConfigOptions", "Ostral.ConfigOptions\Ostral.ConfigOptions.csproj", "{905BDF74-BFC4-4AD6-96C6-FFF49E89365D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A31A96CE-9D9D-4EE7-A5E3-954403056CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A31A96CE-9D9D-4EE7-A5E3-954403056CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A31A96CE-9D9D-4EE7-A5E3-954403056CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A31A96CE-9D9D-4EE7-A5E3-954403056CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84F4131E-55D6-4EB4-87F7-AA9DD5921904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84F4131E-55D6-4EB4-87F7-AA9DD5921904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84F4131E-55D6-4EB4-87F7-AA9DD5921904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84F4131E-55D6-4EB4-87F7-AA9DD5921904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{448D1733-7848-4EAD-ACCE-44A38B537BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{448D1733-7848-4EAD-ACCE-44A38B537BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{448D1733-7848-4EAD-ACCE-44A38B537BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{448D1733-7848-4EAD-ACCE-44A38B537BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64FAD4E7-0B7E-464A-94A4-B5C3B88FF088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64FAD4E7-0B7E-464A-94A4-B5C3B88FF088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64FAD4E7-0B7E-464A-94A4-B5C3B88FF088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64FAD4E7-0B7E-464A-94A4-B5C3B88FF088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B0DDC11-28BB-4904-AF40-4ECAF04B88CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B0DDC11-28BB-4904-AF40-4ECAF04B88CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B0DDC11-28BB-4904-AF40-4ECAF04B88CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B0DDC11-28BB-4904-AF40-4ECAF04B88CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{905BDF74-BFC4-4AD6-96C6-FFF49E89365D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{905BDF74-BFC4-4AD6-96C6-FFF49E89365D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{905BDF74-BFC4-4AD6-96C6-FFF49E89365D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{905BDF74-BFC4-4AD6-96C6-FFF49E89365D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50A43B79-1870-466B-ADB0-8A4262C28D22}
+	EndGlobalSection
+EndGlobal

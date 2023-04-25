@@ -1,0 +1,40 @@
+[
+  {
+    "Id": "19b73581-f3f0-43df-9b03-f3cdd43e871d",
+    "GrandTotal": 0,
+    "UserId": "86462e03-fc0e-4b2a-8b55-016e23d1e12f",
+    "User": {
+      "Id": "86462e03-fc0e-4b2a-8b55-016e23d1e12f",
+      "FirstName": "Test",
+      "LastName": "Test",
+      "Email": "test_test@gmail.com",
+      "IsActive": true,
+      "RefreshToken": null,
+      "RefreshTokenExpiryTime": null,
+      "ImageUrl": "https://res.cloudinary.com/drixwe3ie/image/upload/v1679174136/yk5r9xb3etifxr7c1osp.jpg",
+      "PublicId": null,
+      "CreatedAt": "2023-03-21T00:55:34.4066215Z",
+      "UpdatedAt": "2023-03-21T00:55:34.4067547Z"
+    },
+    "CourseList": []
+  },
+  {
+    "Id": "4faf2af0-a4a5-40e3-af39-a3e826f63c8d",
+    "GrandTotal": 0,
+    "UserId": "3a745f29-b674-4642-95ac-a63ddceaee17",
+    "User": {
+      "Id": "3a745f29-b674-4642-95ac-a63ddceaee17",
+      "FirstName": "Trying",
+      "LastName": "Test",
+      "Email": "trying_test@gmail.com",
+      "IsActive": true,
+      "RefreshToken": null,
+      "RefreshTokenExpiryTime": null,
+      "ImageUrl": "https://res.cloudinary.com/drixwe3ie/image/upload/v1679174389/k5q6hjgitochsmjfz5x8.jpg",
+      "PublicId": null,
+      "CreatedAt": "2023-03-21T00:55:34.4068573Z",
+      "UpdatedAt": "2023-03-21T00:55:34.4068577Z"
+    },
+    "CourseList": []
+  }
+]

@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  ostral.api:
+    image: ${DOCKER_REGISTRY-}ostralapi
+    build:
+      context: .
+      dockerfile: Ostral.API/Dockerfile

@@ -1,0 +1,20 @@
+{
+  "Id": "9c905093-4b9f-4910-9f21-43d9df53026f",
+  "TotalRevenue": 0,
+  "Profession": "FullStack Developer",
+  "CourseList": [],
+  "UserId": "87076422-7f33-415c-ad49-817694062fc9",
+  "User": {
+    "Id": "87076422-7f33-415c-ad49-817694062fc9",
+    "FirstName": "Bola",
+    "LastName": "Tinubu",
+    "Email": "bolatinubu@gmail.com",
+    "IsActive": true,
+    "RefreshToken": null,
+    "RefreshTokenExpiryTime": null,
+    "ImageUrl": "https://res.cloudinary.com/drixwe3ie/image/upload/v1679174136/yk5r9xb3etifxr7c1osp.jpg",
+    "PublicId": null,
+    "CreatedAt": "2023-03-21T00:55:34.4070308Z",
+    "UpdatedAt": "2023-03-21T00:55:34.4070312Z"
+  }
+}
