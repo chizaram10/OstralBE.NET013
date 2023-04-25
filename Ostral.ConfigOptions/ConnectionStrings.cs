@@ -2,5 +2,5 @@ namespace Ostral.ConfigOptions;
 
 public class ConnectionStrings
 {
-    public string DefaultConnection { get; set; }
+    public string? DefaultConnection { get; set; }
 }

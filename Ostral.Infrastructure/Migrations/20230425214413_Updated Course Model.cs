@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Ostral.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Fixcontenttable : Migration
+    public partial class UpdatedCourseModel : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -231,7 +231,6 @@ namespace Ostral.Infrastructure.Migrations
                     Description = table.Column<string>(type: "text", nullable: false),
                     ImageUrl = table.Column<string>(type: "text", nullable: false),
                     Price = table.Column<double>(type: "double precision", nullable: false),
-                    Duration = table.Column<int>(type: "integer", nullable: false),
                     Percentage = table.Column<decimal>(type: "numeric", nullable: false),
                     Completed = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
                     TutorId = table.Column<string>(type: "text", nullable: false),
@@ -291,7 +290,7 @@ namespace Ostral.Infrastructure.Migrations
                     StudentId = table.Column<string>(type: "text", nullable: false),
                     CourseId = table.Column<string>(type: "text", nullable: false),
                     Id = table.Column<string>(type: "text", nullable: true),
-                    CompletionPercentage = table.Column<int>(type: "integer", nullable: false),
+                    CompletionPercentage = table.Column<double>(type: "double precision", nullable: false),
                     CompletionDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)

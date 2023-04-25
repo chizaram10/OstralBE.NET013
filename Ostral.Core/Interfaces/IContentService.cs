@@ -7,5 +7,6 @@ namespace Ostral.Core.Interfaces
 	{
 		Task<Result<IEnumerable<ContentDTO>>> GetAllCourseContentById(string courseId);
 		Task<Result<ContentDetailedDTO>> GetContentById(string contentId);
+		Task<Result<ContentDTO>> CreateContent(ContentCreationDTO contentDTO);
 	}
 }

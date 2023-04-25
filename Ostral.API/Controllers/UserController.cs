@@ -28,7 +28,7 @@ namespace Ostral.API.Controllers
         }
 
         [HttpPut("update-profile")]
-        public async Task<IActionResult> UpdateUserProfile([FromBody] UserDTO updateUserDTO)
+        public async Task<IActionResult> UpdateUserProfile([FromBody] UpdateUserDTO updateUserDTO)
         {
             var response = await _userService.UpdateUserProfile(updateUserDTO);
 

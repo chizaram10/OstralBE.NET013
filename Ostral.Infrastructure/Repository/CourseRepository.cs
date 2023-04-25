@@ -90,5 +90,11 @@ namespace Ostral.Infrastructure.Repository
 
             return randomCourses!;
         }
+
+        public async Task AddCourse(Course course)
+        {
+            await _context.Courses.AddAsync(course);
+            await _context.SaveChangesAsync();
+        }
     }
 }

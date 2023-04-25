@@ -216,7 +216,7 @@ namespace Ostral.Infrastructure.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("ContentUrl")
+                    b.Property<string>("Url")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -245,9 +245,6 @@ namespace Ostral.Infrastructure.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<int>("Duration")
-                        .HasColumnType("integer");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
@@ -309,8 +306,8 @@ namespace Ostral.Infrastructure.Migrations
                     b.Property<DateTime?>("CompletionDate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int>("CompletionPercentage")
-                        .HasColumnType("integer");
+                    b.Property<double>("CompletionPercentage")
+                        .HasColumnType("double precision");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp without time zone");

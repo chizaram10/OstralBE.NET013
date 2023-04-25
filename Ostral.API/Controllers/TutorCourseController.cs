@@ -23,4 +23,14 @@ public class TutorCourseController : ControllerBase
             Ok(ResponseDTO<object>.Success(result.Data!)) 
             : NotFound(ResponseDTO<object>.Fail(result.Errors));
     }
+
+    [HttpPost("create-course/category/{categoryId}")]
+    [Consumes("multipart/form-data")]
+    public async Task<IActionResult> CreateCourse([FromRoute] string tutorId, [FromRoute] string categoryId, [FromForm] CourseCreationDTO data)
+    {
+        var result = await _courseService.CreateCourse(data, tutorId, categoryId);
+        return result.Success ?
+            Ok(ResponseDTO<object>.Success(result.Data!))
+            : BadRequest(ResponseDTO<object>.Fail(result.Errors));
+    }
 }

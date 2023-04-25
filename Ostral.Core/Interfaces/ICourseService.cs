@@ -17,5 +17,7 @@ namespace Ostral.Core.Interfaces
 		Task<Result<CourseDetailedDTO>> GetRandomCourse();
 
         Task<Result<IEnumerable<CourseDTO>>> GetPopularCourses();
+
+        Task<Result<CourseDTO>> CreateCourse(CourseCreationDTO data, string tutorId, string categoryId);
     }
 }

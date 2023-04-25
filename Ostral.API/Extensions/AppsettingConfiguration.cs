@@ -9,6 +9,7 @@ public static class AppsettingConfiguration
     {
         var jwt = new Jwt();
         var mailSettings = new MailSettings();
+        var cloudinarySettings = new CloudinarySettings();
 
         if (env.IsProduction())
         {
@@ -22,11 +23,16 @@ public static class AppsettingConfiguration
             mailSettings.DisplayName = Environment.GetEnvironmentVariable("MailDisplayName")!;
             mailSettings.Username = Environment.GetEnvironmentVariable("MailUsername")!;
             mailSettings.Password = Environment.GetEnvironmentVariable("MailPassword")!;
+
+            cloudinarySettings.ApiKey = Environment.GetEnvironmentVariable("CloudinaryApiKey")!;
+            cloudinarySettings.ApiSecret = Environment.GetEnvironmentVariable("CloudinaryApiSecret")!;
+            cloudinarySettings.CloudName = Environment.GetEnvironmentVariable("CloudinaryCloudName")!;
         }
         else
         {
             config.Bind(nameof(jwt), jwt);
             config.Bind(nameof(mailSettings), mailSettings);
+            config.Bind(nameof(cloudinarySettings), cloudinarySettings);
         }
         
         services.AddSingleton(jwt);

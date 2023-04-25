@@ -16,13 +16,16 @@ namespace Ostral.Core.DTOs
         [Required]
         public string LastName { get; set; } = null!;
 
-        [Required, EmailAddress(ErrorMessage = "The email address entered is invalid. Please enter a valid email address.")]
+        [Required, EmailAddress(ErrorMessage = 
+            "The email address entered is invalid. Please enter a valid email address.")]
         public string Email { get; set; } = string.Empty;
         
         [Required, Phone(ErrorMessage = "Please enter a valid phone number in the format xxx-xxx-xxxx.")]
         public string PhoneNumber { get; set; } = string.Empty;
         
-        [Required, PasswordPropertyText, RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$", ErrorMessage = "Password must contain at least one alphabet character, one digit character, and one special character.")]
+        [Required, PasswordPropertyText, 
+            RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$", ErrorMessage = 
+            "Password must contain at least one alphabet character, one digit character, and one special character.")]
         public string Password { get; set; } = string.Empty;
 
         [Required, Compare(nameof(Password))]

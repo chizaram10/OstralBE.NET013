@@ -68,6 +68,11 @@ namespace Ostral.Core.Implementations
             }
         }
 
+        public Task<Result<ContentDTO>> CreateContent(ContentCreationDTO contentDTO)
+        {
+            throw new NotImplementedException();
+        }
+        
         private static ContentDetailedDTO CreateCourseDetailedDTO(Content content)
         {
             return new ContentDetailedDTO 
@@ -97,5 +102,7 @@ namespace Ostral.Core.Implementations
 			};
 
 		}
-	}
+
+        
+    }
 }

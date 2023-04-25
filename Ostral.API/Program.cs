@@ -15,6 +15,7 @@ builder.Services.AddSwaggerExtension();
 builder.Services.AddAuthenticationExtension(builder.Configuration, builder.Environment);
 builder.Services.AddAuthorizationExtension();
 builder.Services.AddDbContextExtension(builder.Environment, builder.Configuration);
+builder.Services.AddCloudinaryExtention(builder.Configuration, builder.Environment);
 builder.Services.AddServicesExtension(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(OstralProfile));
 builder.Services.AddCors(o =>
@@ -43,7 +44,5 @@ app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
 
 // await OstralDBInitializer.Seed(app);
-
-// await Ostral.Infrastructure.OstralDBInitializer.Seed(app);
 
 app.Run();

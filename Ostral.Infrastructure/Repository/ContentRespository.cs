@@ -31,5 +31,11 @@ namespace Ostral.Infrastructure.Repository
 
             return content!;
         }
+
+        public async Task AddContent(Content content)
+        {
+            await _context.Contents.AddAsync(content);
+            await _context.SaveChangesAsync();
+        }
     }
 }

@@ -7,6 +7,6 @@ namespace Ostral.Core.Interfaces
     {
         Task<Result<UserDTO>> GetUserByEmail(string email);
 
-        Task<Result<UserDTO>> UpdateUserProfile(UserDTO updateUserDTO);
+        Task<Result<UserDTO>> UpdateUserProfile(UpdateUserDTO updateUserDTO);
     }
 }

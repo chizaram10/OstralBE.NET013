@@ -18,5 +18,7 @@ namespace Ostral.Core.Interfaces
         Task<IEnumerable<Course>> GetPopularCourses();
         
         Task<Course> GetRandomCourse();
+
+        Task AddCourse(Course course);
     }
 }

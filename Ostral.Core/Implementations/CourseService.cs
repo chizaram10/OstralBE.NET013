@@ -1,3 +1,5 @@
+using CloudinaryDotNet.Actions;
+using CloudinaryDotNet;
 using Ostral.Core.DTOs;
 using Ostral.Core.Interfaces;
 using Ostral.Core.Results;
@@ -8,13 +10,20 @@ namespace Ostral.Core.Implementations
     public class CourseService : ICourseService
     {
         private readonly ICourseRepository _courseRepository;
+        private readonly ITutorRepository _tutorRepository;
+        private readonly ICategoryRepository _categoryRepository;
+        private readonly Cloudinary _cloudinary;
 
-		public CourseService(ICourseRepository courseRepository)
-		{
-			_courseRepository = courseRepository;
-		}
+        public CourseService(ICourseRepository courseRepository, ITutorRepository tutorRepository,
+            ICategoryRepository categoryRepository, Cloudinary cloudinary)
+        {
+            _courseRepository = courseRepository;
+            _tutorRepository = tutorRepository;
+            _categoryRepository = categoryRepository;
+            _cloudinary = cloudinary;
+        }
 
-		public async Task<Result<IEnumerable<CourseDTO>>> GetAllCourses(int pageSize, int pageNumber)
+        public async Task<Result<IEnumerable<CourseDTO>>> GetAllCourses(int pageSize, int pageNumber)
 		{
 			var result = await _courseRepository.GetAllCourses(pageSize, pageNumber);
 
@@ -118,6 +127,43 @@ namespace Ostral.Core.Implementations
             };
 
             return new Result<CourseDetailedDTO> { Success = true, Data = CreateCourseDetailedDTO(randomCourses) };
+        }
+
+        public async Task<Result<CourseDTO>> CreateCourse(CourseCreationDTO data, string tutorId, string categoryId)
+        {
+            try
+            {
+                var uploadParams = new ImageUploadParams()
+                {
+                    File = new FileDescription(data.Image!.FileName, data.Image.OpenReadStream())
+                };
+
+                var uploadResult = _cloudinary.Upload(uploadParams);
+
+                var imageUrl = uploadResult.SecureUrl.AbsoluteUri;
+
+                var course = new Course()
+                {
+                    Name = data.Name,
+                    Description = data.Description,
+                    ImageUrl = imageUrl,
+                    Price = data.Price,
+                    Category = await _categoryRepository.GetCategoryById(categoryId),
+                    Tutor = await _tutorRepository.GetTutorById(tutorId),
+                };
+
+                await _courseRepository.AddCourse(course);
+
+                return new Result<CourseDTO>
+                {
+                    Data = CreateCourseDTO(course),
+                    Success = true,
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Result<CourseDTO> { Errors = new[] { ex.Message } };
+            }
         }
 
         private static CourseDTO CreateCourseDTO (Course course)

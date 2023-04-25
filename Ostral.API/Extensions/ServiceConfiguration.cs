@@ -38,6 +38,8 @@ namespace Ostral.API.Extensions
 
             services.AddScoped<ITutorRepository, TutorRepository>();
             services.AddScoped<ITutorService, TutorService>();
+
+            services.AddScoped<IUserService, UserService>();
         }
     }
 }

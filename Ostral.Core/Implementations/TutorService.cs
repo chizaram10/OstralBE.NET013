@@ -1,4 +1,6 @@
-﻿using Ostral.Core.DTOs;
+﻿using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using Ostral.Core.DTOs;
 using Ostral.Core.Interfaces;
 using Ostral.Core.Results;
 using Ostral.Domain.Models;
@@ -9,7 +11,7 @@ public class  TutorService : ITutorService
 {
     private readonly ITutorRepository _tutorRepository;
 
-    public TutorService(ITutorRepository tutorRepository)
+    public TutorService(ITutorRepository tutorRepository, Cloudinary cloudinary, ICategoryRepository categoryRepository)
     {
         _tutorRepository = tutorRepository;
     }
@@ -63,7 +65,7 @@ public class  TutorService : ITutorService
 		}
 	}
 
-	private static TutorDTO CreateTutorDTO(Tutor tutor)
+    private static TutorDTO CreateTutorDTO(Tutor tutor)
     {
         return new TutorDTO
         {

@@ -36,7 +36,7 @@ namespace Ostral.Core.Implementations
             };
         }
 
-        public async Task<Result<UserDTO>> UpdateUserProfile(UserDTO updateUserDTO)
+        public async Task<Result<UserDTO>> UpdateUserProfile(UpdateUserDTO updateUserDTO)
         {
             var user = await _manager.FindByEmailAsync(updateUserDTO.Email);
             if (user == null)
