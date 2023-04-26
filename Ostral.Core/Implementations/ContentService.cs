@@ -1,12 +1,9 @@
 ﻿using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
-using Microsoft.AspNetCore.Http;
-using NReco.VideoConverter;
 using Ostral.Core.DTOs;
 using Ostral.Core.Interfaces;
 using Ostral.Core.Results;
 using Ostral.Domain.Models;
-using System.Runtime.CompilerServices;
 
 namespace Ostral.Core.Implementations
 {
@@ -15,16 +12,13 @@ namespace Ostral.Core.Implementations
         private readonly IContentRepository _contentRepository;
         private readonly ICourseRepository _courseRepository;
         private readonly Cloudinary _cloudinary;
-        private readonly FFMpegConverter _converter;
-
 
         public ContentService(IContentRepository courseContentRepository, ICourseRepository courseRepository,
-            Cloudinary cloudinary, FFMpegConverter converter)
+            Cloudinary cloudinary)
         {
             _contentRepository = courseContentRepository;
             _courseRepository = courseRepository;
             _cloudinary = cloudinary;
-            _converter = converter;
         }
 
         public async Task<Result<IEnumerable<ContentDTO>>> GetAllCourseContentById(string courseId)
@@ -92,12 +86,14 @@ namespace Ostral.Core.Implementations
 
                 var uploadResult = await _cloudinary.UploadAsync(uploadParams);
 
+                var mediaType = data.File.ContentType;
+
                 var contentUrl = uploadResult.SecureUrl.AbsoluteUri;
 
                 var content = new Content()
                 {
                     Title = data.Title,
-                    ContentType = data.File.ContentType,
+                    ContentType = mediaType,
                     Url = contentUrl,
                     Duration = data.Duration,
                     Course = await _courseRepository.GetCourseById(courseId),
