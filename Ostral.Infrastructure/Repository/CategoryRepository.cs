@@ -25,11 +25,12 @@ public class CategoryRepository: ICategoryRepository
 		return await categories.PaginationAsync<Category, Category>(pageSize, pageNumber, _mapper);
 	}
 
-	public async Task<Category?> GetCategoryById(string Id)
+	public async Task<Category> GetCategoryById(string Id)
 	{
-		return await _context.Categories
+		var result =  await _context.Categories
             .Where(c => Id == c.Id)
 			.Include(c => c.CourseList)
 			.FirstOrDefaultAsync(c => Id == c.Id);
+		return result!;
 	}
 }

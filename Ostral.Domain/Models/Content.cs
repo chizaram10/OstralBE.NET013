@@ -7,7 +7,7 @@ namespace Ostral.Domain.Models
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
         public string Title { get; set; } = string.Empty;
-        public ContentMediaType Type { get; set; }
+        public string ContentType { get; set; } = string.Empty;
         public double Duration { get; set; }
         public bool IsDownloadable { get; set; }
         public decimal Percentage { get; set; }

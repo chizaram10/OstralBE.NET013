@@ -150,6 +150,8 @@ namespace Ostral.Core.Implementations
                     Price = data.Price,
                     Category = await _categoryRepository.GetCategoryById(categoryId),
                     Tutor = await _tutorRepository.GetTutorById(tutorId),
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow,
                 };
 
                 await _courseRepository.AddCourse(course);

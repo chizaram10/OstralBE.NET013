@@ -13,7 +13,7 @@ namespace Ostral.Core.Interfaces
 
 		Task<Course> GetCourseById(string courseID);
 
-		Task<Course> UpdateCourse(Course course, string id);
+		Task<Course> UpdateCourse(Course course);
         
         Task<IEnumerable<Course>> GetPopularCourses();
         

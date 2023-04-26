@@ -58,9 +58,9 @@ namespace Ostral.Infrastructure.Repository
             return result!;
         }
 
-        public async Task<Course> UpdateCourse(Course course, string id)
+        public async Task<Course> UpdateCourse(Course course)
         {
-            var courseToUpdate = await GetCourseById(id);
+            var courseToUpdate = await GetCourseById(course.Id);
             if (courseToUpdate == null) return courseToUpdate!;
 
 			_context.Entry(course).State = EntityState.Modified;

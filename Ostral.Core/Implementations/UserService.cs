@@ -43,6 +43,8 @@ namespace Ostral.Core.Implementations
                 return new Result<UserDTO> { Errors = new List<string> { $"User not found for email {updateUserDTO.Email}" } };
 
             _mapper.Map(updateUserDTO, user);
+            user.UpdatedAt = DateTime.UtcNow;
+
             await _manager.UpdateAsync(user);
             var result = _mapper.Map<UserDTO>(user);
             return new Result<UserDTO> { Data = result, Success = true };
